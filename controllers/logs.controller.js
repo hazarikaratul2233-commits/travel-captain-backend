@@ -104,7 +104,8 @@ export const getLogByUserId = async (req, res) => {
 
 export const getLogByUserIdAndDate = async (req, res) => {
   try {
-    const timezone = req.query.timezone || "UTC";
+    console.log("Timezone from frontend:", req.query.timezone);
+    const timezone = req.query.timezone || "Asia/Kolkata";
     const { id, date } = req.params;
 
     const startDate = new Date(`${date}T00:00:00`);
